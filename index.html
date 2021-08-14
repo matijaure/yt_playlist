@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>YouTube Playlist BETA</title>
+  <meta charset='utf-8'/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="/icons/eo.png">
+  <script src="js/promise_loader.js"></script>
+  <script src="js/yp_manifest.js"></script>
+</head>
+
+<body class="basic">
+  <div id="info-bar">
+    <span id="info">
+    </span>
+    <span id="time">0:00 / 0:00</span>
+  </div>
+
+  <div id="bottom-bar">
+    <a id="toggle-advanced">Show Advanced</a>
+    <a href="https://twitter.com/Modest_ralts" target="_blank">By TheOnlyOne</a>
+    <a href="/scores">Scores</a>
+  </div>
+
+  <div id="page">
+
+    <div id="player-size">
+      <div id="player-container">
+        <div id="player">
+          <p>YouTube API is currently loading...</p>
+          <p>If nothing is happening, try refreshing.</p>
+          <p>If that does not work, it may be because you are on an unsupported browser.</p>
+          <p>Only Firefox, Chrome, and Safari are currently supported.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="controls-container">
+
+      <div id="playback-controls">
+        <button type="button" id="play-pause">Pause</button>
+        <!-- <button type="button" id="reload-songs">Reload Playlist</button> -->
+      </div>
+
+      <div id="song-order">
+        <button type="button" id="next">Next</button>
+        <label><input id='cb-repeat' type='checkbox'>Repeat Once</label>
+        <label> Song order:
+          <select id="song-order-select" autocomplete="off">
+            <option value="organized">Organized</option>
+            <option value="shuffle" selected>Shuffled</option>
+            <option value="random">Random</option>
+            <option value="weighted">Weighted</option>
+        </select></label>
+        <label class="extra"><input id='cb-skip-fail' type='checkbox'>Skip Unlikely</label>
+      </div>
+
+      <div id="volume-row">
+        <span id="volume-name">Volume:</span>
+        <input id="volume-slider" type="range" min="1" max="100" value="100">
+        <span id="volume-number">100</span>
+      </div>
+
+      <div id="tag-table">
+        <div class="tag-table-header">
+          <label>Tag</label>
+          <label class="tag-table-require">Require</label>
+          <label class="tag-table-exclude">Exclude</label>
+          <label class="tag-table-include">Include</label>
+          <label class="tag-table-ignore" >Ignore</label>
+        </div>
+        <div id="inner-tag-table">
+
+        </div>
+      </div>
+
+      <div id="tag-controls">
+        <label><input id='cb-like' type='checkbox'>Like</label>
+        <label><input id='cb-disable' type='checkbox'>Disable</label>
+        <button type="button" id="reset-preferences">Reset Preferences</button>
+        <button type="button" id="reset-set-tags">Reset Tags</button>
+      </div>
+
+      <div class="extra">
+        <div id="bot-connection">
+          <div id="connection-controls">
+            <button type="button" id="comm-button">Connect</button>
+            <label>Host:<input id="bot-host" value="localhost"></input></label>
+            <label>Port:<input id="bot-port" value="50000"></input></label>
+          </div>
+          <span id="comm-info">Not currently connected to bot.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="debug-log" class="extra">
+      <div>Debug Log:</div>
+    </div>
+
+  </div>
+
+
+</body>
+
+<div id="templates" style="display: none;">
+  <div id="tag-table-row-template" class="tag-table-row">
+    <label class="tag-name"></label>
+    <label class="tag-table-require"><input type="radio" value="require"/></label>
+    <label class="tag-table-exclude"><input type="radio" value="exclude"/></label>
+    <label class="tag-table-include"><input type="radio" value="include"/></label>
+    <label class="tag-table-ignore" ><input type="radio" value="ignore"/></label>
+  </div>
+</div>
+
+</html>

@@ -1,0 +1,305 @@
+:root {
+	--info-height: 36px;
+	--bottom-height: 18px;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-size: 24px;
+	margin: 0;
+	padding-top: var(--info-height);
+	padding-bottom: var(--bottom-height);
+	overflow: hidden;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+button {
+	font-size: 24px;
+}
+
+.basic .extra {
+	display: none;
+}
+.advanced .extra {
+	display: initial;
+}
+
+#info-bar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: var(--info-height);
+	background: #300868;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#info-bar>span {
+	padding: 0 3px;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#info>span {
+	margin-right: 50px;
+}
+#info>span>span:first-child {
+	color: #CCCCCC;
+	margin-right: 8px;
+}
+
+#time {
+	min-width: 120px;
+	text-align: right;
+}
+
+#bottom-bar {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: var(--bottom-height);
+	background: #A9A9E2;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#bottom-bar a {
+	padding: 0px 5px;
+	text-decoration: none;
+	color: #000050;
+	cursor: pointer;
+	transition: .2s;
+	height: 100%;
+	text-align: center;
+}
+#bottom-bar a:hover {
+	background: #000050;
+	color: #A9A9E2;
+}
+#toggle-advanced {
+	width: 95px;
+}
+
+#page {
+	padding: 10px;
+	height: 100%;
+	overflow: auto;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#controls-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 480px;
+	height: 360px;
+	padding-bottom: 10px;
+}
+#player-size {
+	min-width: 640px;
+	max-width: 640px;
+	height: 360px;
+	padding-bottom: 10px;
+}
+
+#controls-container span,
+#controls-container label,
+#controls-container button {
+	margin-left: 20px;
+}
+
+#playback-controls {
+	display: flex;
+	align-items: center;
+	display: none;
+}
+
+#play-pause {
+	width: 90px;
+}
+
+#song-order {
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 18px;
+	align-items: center;
+}
+
+#volume-row {
+	display: flex;
+	align-items: center;
+}
+
+span#volume-name {
+	margin-right: 0px;
+}
+
+span#volume-number {
+	min-width: 40px;
+	margin-left: 0px;
+}
+
+#volume-slider {
+	vertical-align: middle;
+}
+
+#bot-connection {
+	display: flex;
+	flex-direction: column;
+}
+
+#connection-controls {
+	display: flex;
+	align-items: center;
+}
+#connection-controls label {
+	display: flex;
+	font-size: 20px;
+}
+#connection-controls input {
+	margin-left: 4px;
+}
+
+#comm-button {
+	width: 140px;
+}
+#bot-host {
+	width: 70px;
+}
+#bot-port {
+	width: 50px;
+}
+
+#song-order-select {
+	min-width: 110px;
+}
+
+
+#tag-table {
+	font-size: 18px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	margin-left: 22px;
+	margin-bottom: 2px;
+}
+
+#tag-table label {
+	display: block;
+	text-align: center;
+	transition: .15s;
+	margin-left: 0px;
+}
+
+#tag-table input[type="radio"] {
+	margin: 0px;
+	height: 100%;
+	height: 100%;
+}
+
+#tag-table label:first-child {
+	width: 130px;
+	padding-right: 10px;
+}
+
+#tag-table label:not(:first-child) {
+	width: 70px
+}
+
+.tag-table-header {
+	display: flex;
+	width: 440px;
+	height: 26px;
+	font-weight: bold;
+}
+
+.tag-table-row {
+	display: flex;
+	min-height: 40px;
+}
+
+#inner-tag-table label:first-child {
+	text-align: right;
+	padding-top: 8px;
+}
+
+
+#inner-tag-table {
+	width: 440px;
+	height: 240px;
+	overflow-y: scroll;
+	outline: 2px solid black;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	display: flex;
+	flex-direction: column;
+}
+
+.advanced #inner-tag-table {
+	height: 120px;
+}
+
+
+
+/* background colors for the different tag options*/
+.tag-table-require {
+	background: #00AA00;
+}
+#inner-tag-table .tag-table-require:hover {
+	background: #22FF44;
+}
+
+.tag-table-exclude {
+	background: #EE0000;
+}
+#inner-tag-table .tag-table-exclude:hover {
+	background: #FF7788;
+}
+
+.tag-table-include {
+	background: #80B0FF;
+}
+#inner-tag-table .tag-table-include:hover {
+	background: #A0F0FF;
+}
+
+.tag-table-ignore {
+	background: gold;
+}
+#inner-tag-table .tag-table-ignore:hover {
+	background: #FFFF80;
+}
+
+
+#tag-controls {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	font-size: 18px;
+}
+
+#tag-controls button {
+	font-size: 17px;
+}
+
+
+
+#debug-log {
+	outline: 1px solid black;
+	font-size: 16px;
+	padding: 2px;
+	width: 100%;
+	height: 240px;
+	overflow: auto;
+}
